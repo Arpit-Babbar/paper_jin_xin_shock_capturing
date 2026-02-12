@@ -83,7 +83,7 @@ domain = [xmin, xmax, ymin, ymax]
 problem = Problem(domain, initial_value, boundary_value, boundary_condition,
                   final_time, exact_solution, source_terms = EqJinXin.jin_xin_source)
 limiter = setup_limiter_blend(blend_type = fo_blend(equation_jin_xin),
-                            indicating_variables = Eq.rho_p_indicator!,
+                            indicating_variables = EqJinXin.rho_p_indicator!,
                             reconstruction_variables = conservative_reconstruction,
                             indicator_model = "gassner",
                             debug_blend = false)
