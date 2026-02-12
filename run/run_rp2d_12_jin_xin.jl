@@ -81,7 +81,7 @@ cfl_safety_factor = 0.98
 grid_size = [nx, ny]
 domain = [xmin, xmax, ymin, ymax]
 problem = Problem(domain, initial_value, boundary_value, boundary_condition,
-                  final_time, exact_solution)
+                  final_time, exact_solution, source_terms = EqJinXin.jin_xin_source)
 limiter = setup_limiter_blend(blend_type = fo_blend(equation_jin_xin),
                             indicating_variables = Eq.rho_p_indicator!,
                             reconstruction_variables = conservative_reconstruction,
