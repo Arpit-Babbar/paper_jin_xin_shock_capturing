@@ -80,10 +80,9 @@ cfl_safety_factor = 0.98
 #------------------------------------------------------------------------------
 grid_size = [nx, ny]
 domain = [xmin, xmax, ymin, ymax]
-equation = Eq.get_equation(γ)
 problem = Problem(domain, initial_value, boundary_value, boundary_condition,
                   final_time, exact_solution)
-limiter = setup_limiter_blend(blend_type = fo_blend(equation),
+limiter = setup_limiter_blend(blend_type = fo_blend(equation_jin_xin),
                             indicating_variables = Eq.rho_p_indicator!,
                             reconstruction_variables = conservative_reconstruction,
                             indicator_model = "gassner",
@@ -95,7 +94,7 @@ param = Parameters(grid_size, cfl, bounds, save_iter_interval,
                    cfl_safety_factor = cfl_safety_factor,
                    saveto = "none")
 #------------------------------------------------------------------------------
-sol = Tenkai.solve(equation, problem, scheme, param);
+sol = Tenkai.solve(equation_jin_xin, problem, scheme, param);
 
 println(sol["errors"])
 
