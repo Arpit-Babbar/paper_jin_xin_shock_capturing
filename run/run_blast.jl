@@ -48,6 +48,7 @@ limiter = setup_limiter_blend(blend_type = fo_blend(equation),
                               indicating_variables = Eq.rho_p_indicator!,
                               reconstruction_variables = conservative_reconstruction,
                               indicator_model = indicator_model,
+                              amax = 1.0,
                               debug_blend = debug_blend,
                               pure_fv = pure_fv,
                               numflux = Eq.rusanov)
