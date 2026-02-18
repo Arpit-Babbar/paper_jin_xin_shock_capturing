@@ -17,8 +17,9 @@ ny = nx
 epsilon_relaxation = 1e-12
 
 equation_jin_xin = EqJinXin.get_equation(equation_euler, epsilon_relaxation, nx, ny,
-                                         thresholds = (1e-14, 0.8e-3),
-                                         jin_xin_dt_scaling = 0.8)
+                                         thresholds = (1e-14, 0.4e-4),
+                                        #  thresholds = (1e-14, 0.5e-4),
+                                         jin_xin_dt_scaling = 0.5)
 
 initial_value_sedov, exact_solution_sedov = Eq.sedov_data
 
@@ -65,7 +66,7 @@ scheme = Scheme(solver, degree, solution_points, correction_function,
 param = Parameters(grid_size, cfl, bounds, save_iter_interval,
                    save_time_interval, compute_error_interval,
                    cfl_safety_factor = cfl_safety_factor,
-                   saveto = "output_jin_xin_nx$nx")
+                   saveto = joinpath(@__DIR__, "sedov_blast_jin_xin_nx$nx"))
 #------------------------------------------------------------------------------
 sol = Tenkai.solve(equation_jin_xin, problem, scheme, param);
 
