@@ -27,8 +27,8 @@ cfl = 0.0
 bounds = ([-Inf], [Inf]) # Not used in Euler
 tvbM = 0.0
 save_iter_interval = 0
-save_time_interval = 0.0
-animate_time_factor = 1 # Factor on save_iter_interval or save_time_interval
+save_time_interval = 0.1 * final_time
+animate_time_factor = 0 # Factor on save_iter_interval or save_time_interval
 compute_error_interval = 0
 
 cfl_safety_factor = 0.98
@@ -54,7 +54,7 @@ scheme = Scheme(solver, degree, solution_points, correction_function,
 param = Parameters(grid_size, cfl, bounds, save_iter_interval,
                    save_time_interval, compute_error_interval,
                    cfl_safety_factor = cfl_safety_factor,
-                   saveto = joinpath(@__DIR__, "sedov_blast_nx$nx"))
+                   saveto = joinpath(@__DIR__, "sedov_blast_blend_nx$nx"))
 #------------------------------------------------------------------------------
 sol = Tenkai.solve(equation, problem, scheme, param);
 

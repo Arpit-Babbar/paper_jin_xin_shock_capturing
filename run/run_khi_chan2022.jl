@@ -71,7 +71,7 @@ param = Parameters(grid_size, cfl, bounds, save_iter_interval,
                    save_time_interval, compute_error_interval,
                    animate = animate,
                    cfl_safety_factor = cfl_safety_factor,
-                   saveto = joinpath(@__DIR__, "output_khi_chan2022_blending_nx$nx"))
+                   saveto = joinpath(@__DIR__, "output_khi_chan2022_blend_nx$nx"))
 #------------------------------------------------------------------------------
 sol = Tenkai.solve(equation, problem, scheme, param);
 
