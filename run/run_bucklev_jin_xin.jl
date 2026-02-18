@@ -12,7 +12,7 @@ xmin, xmax = -1.0, 1.0
 initial_value = Eq.hatbuck_iv
 boundary_condition = (periodic, periodic)
 exact_solution = Eq.hatbuck_exact_a025
-final_time = 0.4 # Larger epsilon is needed for time > 0.15
+final_time = 0.15 # Larger epsilon is needed for time > 0.15
 
 epsilon_relaxation = 1e-4
 
@@ -32,8 +32,8 @@ nx = 50
 equation_jin_xin = EqJinXin.get_equation(eq_bucklev, advection_jin_xin,
                                          advection_jin_xin_plus,
                                          advection_jin_xin_minus, epsilon_relaxation, nx,
-                                         thresholds = (1.5e-12, 1e-3),
-                                         jin_xin_dt_scaling = 1.0)
+                                         thresholds = (1.5e-12, 2e-4),
+                                         jin_xin_dt_scaling = 0.5)
 
 # Is it really a struct?
 initial_value_struct = EqJinXin.JinXinICBC(Eq.hatbuck_iv, equation_jin_xin)
@@ -80,4 +80,4 @@ sol = Tenkai.solve(equation_jin_xin, problem, scheme, param)
 
 println(sol["errors"])
 
-sol["plot_data"].p_ua
+sol["plot_data"].p_u1

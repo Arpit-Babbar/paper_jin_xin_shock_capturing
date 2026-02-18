@@ -12,7 +12,7 @@ initial_value = Eq.hatbuck_iv
 boundary_value = Eq.hatbuck_exact # dummy function
 boundary_condition = (periodic, periodic)
 exact_solution = Eq.hatbuck_exact_a025
-final_time = 0.4
+final_time = 0.15
 
 degree = 3
 solver = cSSP2IMEX433()
