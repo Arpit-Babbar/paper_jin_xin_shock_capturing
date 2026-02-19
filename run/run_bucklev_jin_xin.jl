@@ -32,7 +32,7 @@ nx = 50
 equation_jin_xin = EqJinXin.get_equation(eq_bucklev, advection_jin_xin,
                                          advection_jin_xin_plus,
                                          advection_jin_xin_minus, epsilon_relaxation, nx,
-                                         thresholds = (1.5e-12, 2e-4),
+                                         thresholds = (1.0e-12, 2e-4),
                                          jin_xin_dt_scaling = 0.5)
 
 # Is it really a struct?
