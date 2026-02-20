@@ -70,23 +70,6 @@ fig
 fig.savefig(filename)
 run(`bash pdfbb $filename`)
 
-
-fig, ax = plt.subplots()
-ax.set_xlabel("\$x\$")
-ax.set_ylabel("\$ h \$")
-ax.grid(true, linestyle = "--")
-approx = readdlm(joinpath(@__DIR__, "..", "run", "ssw_roll_1d", "ssw_roll_wave2", "sol.txt"))
-exact_brock2 = readdlm(joinpath(@__DIR__, "exact_brock2.txt"), skipstart = 1)
-h0 = 5.33e-3
-ax.scatter(exact_brock2[:, 1] * 1.8, exact_brock2[:, 2] * h0, label = "Experimental", lw = 2,
-           c = "k")
-plot_sol(ax, approx, 1, ls = "--")
-ax.legend()
-filename = joinpath("roll_wave2.pdf")
-fig
-fig.savefig(filename)
-run(`bash pdfbb $filename`)
-
 # Jin Xin Burgers' equation solution
 
 epsilon_relaxation_array = (1e-1, 1e-2, 1e-3, 1e-4, 1e-12)
