@@ -17,3 +17,5 @@ include("run/run_sedov.jl")
 # Kelvin-Helmholtz instability
 include("run/run_khi_jin_xin.jl")
 include("run/run_khi.jl")
+
+include("postprocess/plot_all.jl")
