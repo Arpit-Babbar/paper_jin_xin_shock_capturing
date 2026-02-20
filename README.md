@@ -1,7 +1,7 @@
 # Jin-Xin relaxation as a shock capturing method for high order DG/FR schemes
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/?)](https://zenodo.org/doi/?)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18711723)](https://zenodo.org/doi/10.5281/zenodo.18711723)
 
 This repository contains information and code to reproduce the results
 presented in the article
@@ -26,7 +26,7 @@ If you use the implementations provided here, please **also** cite this reposito
   author={Artiano, Marco and Babbar, Arpit and Schlottke-Lakemper, Michael and Gassner, Gregor and Ranocha, Hendrik},
   year={2026},
   howpublished={\url{https://github.com/Arpit-Babbar/paper_jin_xin_shock_capturing}},
-  doi={?}
+  doi={10.5281/zenodo.18711723}
 }
 ```
 
