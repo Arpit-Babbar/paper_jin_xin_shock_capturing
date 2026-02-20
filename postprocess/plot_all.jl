@@ -70,51 +70,6 @@ fig
 fig.savefig(filename)
 run(`bash pdfbb $filename`)
 
-# Jin Xin Burgers' equation solution
-
-epsilon_relaxation_array = (1e-1, 1e-2, 1e-3, 1e-4, 1e-12)
-eps2string = Dict(1e-1 => "1", 1e-2 => "2", 1e-3 => "3", 1e-4 => "4", 1e-12 => "12")
-burger_sols_array = [readdlm(joinpath(@__DIR__, "..", "run", "jin_xin", "jin_xin_nx20_eps$(eps2string[epsilon_relaxation])", "sol.txt")) for epsilon_relaxation in epsilon_relaxation_array]
-
-using Tenkai.EqBurg1D: find_zero
-function initial_value_burg_marco(x)
-    k = 1.0
-    u = 2.0 + sinpi(k * (x[1] - 0.7))
-    return u
-end
-
-function exact_solution_burger_marco(x, t_)
-    t = min(0.3, t_)
-    implicit_eqn(u) = u - initial_value_burg_marco(x - t * u)
-    seed = initial_value_burg_marco(x)
-    value = find_zero(implicit_eqn, seed)
-    return value
-end
-
-exact(x) = exact_solution_burger_marco(x, 0.25)
-for i in 1:5
-    burgers_sol = burger_sols_array[i]
-    global fig, ax
-    fig, ax = plt.subplots()
-    ax.set_xlabel("\$x\$", fontsize = 22)
-    ax.set_ylabel("\$ u \$", fontsize = 22)
-    ax.tick_params(axis="both", which="major", labelsize=23)
-    ax.tick_params(axis="both", which="minor", labelsize=23)
-    ax.grid(true, linestyle = "--")
-    ax.plot(burgers_sol[:, 1], exact.(burgers_sol[:, 1]), label = "Exact", c = "k", lw = 2,
-            ls = "-")
-    epsilon_string = eps2string[epsilon_relaxation_array[i]]
-    ax.set_title("\$ \\varepsilon = 10^{-$epsilon_string} \$", fontsize = 25)
-    # plot_sol(ax, burgers_sol, 3)
-    ax.plot(burgers_sol[:, 1], burgers_sol[:, 2], label = "Numerical", color = "red",
-            lw = 2, ls = "--")
-    ax.legend()
-    epsilon = epsilon_relaxation_array[i]
-    global filename = joinpath("jin_xin_burgers_eps$(epsilon_string).pdf")
-    fig.savefig(filename)
-    run(`bash pdfbb $filename`)
-end
-
 # Blast
 
 # Density
