@@ -1,3 +1,7 @@
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+
 # Burgers' equation
 include("run/run_burg1d_jin_xin.jl")
 include("run/run_burg1d.jl")
