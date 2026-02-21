@@ -17,7 +17,7 @@ ny = nx
 epsilon_relaxation = 1e-12
 
 equation_jin_xin = EqJinXin.get_equation(equation_euler, epsilon_relaxation, nx, ny,
-                                         thresholds = (1e-14, 4e-5),
+                                         thresholds = (1e-12, 0.8e-4),
                                         #  thresholds = (1e-14, 0.5e-4),
                                          jin_xin_dt_scaling = 0.5)
 

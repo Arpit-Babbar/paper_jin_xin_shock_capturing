@@ -39,7 +39,7 @@ numerical_flux = Eq.rusanov
 
 bound_limit = "no"
 bflux = extrapolate
-final_time = 3.0
+final_time = 10.0
 
 nx, ny = 32, 32
 cfl = 0.0
@@ -49,7 +49,7 @@ save_time_interval = final_time / 20.0
 animate = true # Factor on save_iter_interval or save_time_interval
 compute_error_interval = 0
 
-cfl_safety_factor = 0.8
+cfl_safety_factor = 0.5
 
 #------------------------------------------------------------------------------
 grid_size = [nx, ny]
@@ -62,7 +62,7 @@ limiter = setup_limiter_blend(blend_type = fo_blend(equation),
                               indicating_variables = Eq.rho_p_indicator!,
                               reconstruction_variables = conservative_reconstruction,
                               indicator_model = "gassner",
-                              amax = 0.002,
+                              amax = 0.01,
                               debug_blend = false)
 # limiter = setup_limiter_none()
 scheme = Scheme(solver, degree, solution_points, correction_function,

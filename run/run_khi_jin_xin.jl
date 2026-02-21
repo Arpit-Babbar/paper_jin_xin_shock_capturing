@@ -16,7 +16,8 @@ nx, ny = 32, 32
 epsilon_relaxation = 1e-12
 
 equation_jin_xin = EqJinXin.get_equation(equation_euler, epsilon_relaxation, nx, ny,
-                                         thresholds = (1e-14, 1e-8),
+                                         thresholds = (1e-12, 1.0e-6),
+                                        #  thresholds = (1e-14, 0.5e-6), Doesn't work
                                          jin_xin_dt_scaling = 0.5)
 
 function inital_data_khi_chan(x, y)
@@ -47,7 +48,7 @@ numerical_flux = EqJinXin.rusanov
 
 bound_limit = "no"
 bflux = extrapolate
-final_time = 3.0
+final_time = 10.0
 
 cfl = 0.0
 bounds = ([-Inf], [Inf]) # Not used in Euler
@@ -56,7 +57,7 @@ save_time_interval = final_time / 20.0
 animate = true # Factor on save_iter_interval or save_time_interval
 compute_error_interval = 0
 
-cfl_safety_factor = 0.8
+cfl_safety_factor = 0.5
 
 #------------------------------------------------------------------------------
 grid_size = [nx, ny]
