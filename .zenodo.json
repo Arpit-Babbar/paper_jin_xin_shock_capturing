@@ -1,0 +1,33 @@
+{
+    "license": "MIT",
+    "title": "Reproducibility repository for the paper Jin-Xin relaxation as a shock-capturing method for high-order DG/FR schemes",
+    "upload_type": "software",
+    "creators": [
+        {
+            "affiliation": "Institute of Mathematics, Johannes Gutenberg University Mainz, Germany",
+            "name": "Artiano, Marco",
+            "orcid": "0000-0003-1903-4107"
+        },
+        {
+            "affiliation": "Institute of Mathematics, Johannes Gutenberg University Mainz, Germany",
+            "name": "Babbar, Arpit",
+            "orcid": "0000-0002-9453-370X"
+        },
+        {
+            "affiliation": "High-Performance Scientific Computing, University of Augsburg, Germany",
+            "name": "Schlottke-Lakemper, Michael",
+            "orcid": "0000-0002-3195-2536"
+        },
+        {
+            "affiliation": "Mathematical Institute, University of Cologne, Cologne, Germany",
+            "name": "Gassner, Gregor",
+            "orcid": "0000-0002-1752-1158"
+        },
+        {
+            "affiliation": "Institute of Mathematics, Johannes Gutenberg University Mainz, Germany",
+            "name": "Ranocha, Hendrik",
+            "orcid": "0000-0002-3456-2277"
+        }
+    ],
+    "access_right": "open"
+}
