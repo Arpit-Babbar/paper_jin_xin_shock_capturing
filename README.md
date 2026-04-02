@@ -7,11 +7,11 @@ This repository contains information and code to reproduce the results
 presented in the article
 ```bibtex
 @online{artiano2026jinxin,
-  title={Jin-Xin relaxation as a shock-capturing method for high-order DG/FR schemes},
+  title={Jin-{X}in relaxation as a shock-capturing method for high-order {DG/FR} schemes},
   author={Artiano, Marco and Babbar, Arpit and Schlottke-Lakemper, Michael and Gassner, Gregor and Ranocha, Hendrik},
   year={2026},
   month={3},
-  eprint={?},
+  eprint={2603.16290},
   eprinttype={arxiv},
   eprintclass={math.NA}
 }
